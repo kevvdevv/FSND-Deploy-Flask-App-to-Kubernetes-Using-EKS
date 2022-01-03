@@ -21,7 +21,6 @@ phases:
         - export KUBECONFIG=$HOME/.kube/config
   build:
     commands:
-      - docker run -it --privileged aws/codebuild/standard:5.0 bash
       - docker login -u kevinsolson -p $DOCKER_SECRET
       - docker build --tag $REPOSITORY_URI:$TAG .
   post_build:
