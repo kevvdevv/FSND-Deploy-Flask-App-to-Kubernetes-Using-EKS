@@ -8,6 +8,8 @@ import pytest
 import main.__init__ as __init__
 
 SECRET = os.environ.get('JWT_SECRET', 'abc123abc1234')
+EMAIL = "me@email.com"
+PASSWORD = "mysupersecretpasswordonlyfortesting"
 
 @pytest.fixture
 def client():
