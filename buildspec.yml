@@ -12,7 +12,7 @@ phases:
       - apt-get update
       - apt-get -y install jq python3-pip python3-dev
       - pip3 install --upgrade awscli
-      - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2 &
+      - /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2 &>/var/log/docker.log &
       - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"
   pre_build:
       commands:
