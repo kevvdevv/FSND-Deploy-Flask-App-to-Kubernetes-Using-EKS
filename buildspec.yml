@@ -21,7 +21,7 @@ phases:
         - export KUBECONFIG=$HOME/.kube/config
   build:
     commands:
-      - docker login -u kevinsolson -p $DOCKER_SECRET
+      #- docker login -u kevinsolson -p $DOCKER_SECRET
       - docker build --tag $REPOSITORY_URI:$TAG .
   post_build:
     commands:
